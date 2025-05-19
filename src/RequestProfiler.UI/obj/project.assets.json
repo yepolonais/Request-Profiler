@@ -1,0 +1,97 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "RequestProfiler.Storage/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/RequestProfiler.Storage.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RequestProfiler.Storage.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "RequestProfiler.Storage/1.0.0": {
+      "type": "project",
+      "path": "../RequestProfiler.Storage/RequestProfiler.Storage.csproj",
+      "msbuildProject": "../RequestProfiler.Storage/RequestProfiler.Storage.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "RequestProfiler.Storage >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "/home/yepo/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/home/yepo/apps/RequestProfiler/src/RequestProfiler.UI/RequestProfiler.UI.csproj",
+      "projectName": "RequestProfiler.UI",
+      "projectPath": "/home/yepo/apps/RequestProfiler/src/RequestProfiler.UI/RequestProfiler.UI.csproj",
+      "packagesPath": "/home/yepo/.nuget/packages/",
+      "outputPath": "/home/yepo/apps/RequestProfiler/src/RequestProfiler.UI/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/home/yepo/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {
+            "/home/yepo/apps/RequestProfiler/src/RequestProfiler.Storage/RequestProfiler.Storage.csproj": {
+              "projectPath": "/home/yepo/apps/RequestProfiler/src/RequestProfiler.Storage/RequestProfiler.Storage.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      }
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.408/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
