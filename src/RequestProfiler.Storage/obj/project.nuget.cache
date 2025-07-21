@@ -1,8 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "xVyJQIvl4ow=",
+  "dgSpecHash": "z+aKSIYBKRY=",
   "success": true,
   "projectFilePath": "/workspaces/Request-Profiler/src/RequestProfiler.Storage/RequestProfiler.Storage.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/codespace/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "/home/codespace/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.0/microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "/home/codespace/.nuget/packages/pipelines.sockets.unofficial/2.2.8/pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
+    "/home/codespace/.nuget/packages/stackexchange.redis/2.8.58/stackexchange.redis.2.8.58.nupkg.sha512",
+    "/home/codespace/.nuget/packages/system.io.pipelines/9.0.7/system.io.pipelines.9.0.7.nupkg.sha512",
+    "/home/codespace/.nuget/packages/system.text.encodings.web/9.0.7/system.text.encodings.web.9.0.7.nupkg.sha512",
+    "/home/codespace/.nuget/packages/system.text.json/9.0.7/system.text.json.9.0.7.nupkg.sha512"
+  ],
   "logs": []
 }

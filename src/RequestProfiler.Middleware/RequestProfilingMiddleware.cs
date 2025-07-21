@@ -1,18 +1,29 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
+using RequestProfiler.Storage;
 using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace RequestProfiler.Middleware;
-public class RequestProfilingMiddleware(RequestDelegate next, ILogger<RequestProfilingMiddleware> logger)
+public class RequestProfilingMiddleware
 {
     private static readonly string[] ExcludedPaths = ["/health", "/healthz", "/ping"];
+    private readonly RequestDelegate _next;
+    private readonly ILogger<RequestProfilingMiddleware> _logger;
+    private readonly ITraceStorage _traceStorage;
+
+    public RequestProfilingMiddleware(RequestDelegate next, ILogger<RequestProfilingMiddleware> logger, ITraceStorage traceStorage)
+    {
+        _next = next;
+        _logger = logger;
+        _traceStorage = traceStorage;
+    }
 
     public async Task InvokeAsync(HttpContext context)
     {
         if (IsExcludedPath(context.Request.Path))
         {
-            await next(context);
+            await _next(context);
             return;
         }
 
@@ -21,7 +32,7 @@ public class RequestProfilingMiddleware(RequestDelegate next, ILogger<RequestPro
         string requestBody = await ReadRequestBodyAsync(context);
         var (originalBodyStream, responseBodyStream) = InterceptResponseBody(context);
 
-        await next(context);
+        await _next(context);
 
         stopwatch.Stop();
         string responseBody = await ReadResponseBodyAsync(context);
@@ -37,7 +48,7 @@ public class RequestProfilingMiddleware(RequestDelegate next, ILogger<RequestPro
         string requestHeaders = GetHeadersString(context.Request.Headers);
         string responseHeaders = GetHeadersString(context.Response.Headers);
 
-        logger.LogInformation("HTTP {Method} {Path} responded {StatusCode} in {Duration} ms, {ResponseSize} bytes | CorrelationId: {CorrelationId} | RequestHeaders: {RequestHeaders} | ResponseHeaders: {ResponseHeaders} | RequestBody: {RequestBody} | ResponseBody: {ResponseBody}",
+        _logger.LogInformation("HTTP {Method} {Path} responded {StatusCode} in {Duration} ms, {ResponseSize} bytes | CorrelationId: {CorrelationId} | RequestHeaders: {RequestHeaders} | ResponseHeaders: {ResponseHeaders} | RequestBody: {RequestBody} | ResponseBody: {ResponseBody}",
             method,
             path,
             statusCode,
@@ -48,6 +59,23 @@ public class RequestProfilingMiddleware(RequestDelegate next, ILogger<RequestPro
             responseHeaders,
             requestBody,
             responseBody);
+
+        // Stockage temporaire dans Redis
+        var trace = new RequestTrace
+        {
+            CorrelationId = correlationId,
+            Method = method,
+            Path = path,
+            StatusCode = statusCode,
+            DurationMs = durationMs,
+            ResponseSize = responseSize,
+            RequestHeaders = requestHeaders,
+            ResponseHeaders = responseHeaders,
+            RequestBody = requestBody,
+            ResponseBody = responseBody,
+            Timestamp = DateTime.UtcNow
+        };
+        await _traceStorage.StoreTraceAsync(correlationId, trace);
     }
 
     private static bool IsExcludedPath(PathString path)

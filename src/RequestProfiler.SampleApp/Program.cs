@@ -1,6 +1,14 @@
 using RequestProfiler.Middleware;
+using RequestProfiler.Storage;
+using StackExchange.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Configuration Redis (adapter l'endpoint si besoin)
+var redis = ConnectionMultiplexer.Connect("localhost:6379");
+builder.Services.AddSingleton<IConnectionMultiplexer>(redis);
+builder.Services.AddSingleton<ITraceStorage>(sp =>
+    new RedisTraceStorage(sp.GetRequiredService<IConnectionMultiplexer>()));
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -18,7 +26,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseRequestProfiler();
+// Utilisation du middleware avec DI
+app.UseMiddleware<RequestProfilingMiddleware>();
 
 var summaries = new[]
 {
