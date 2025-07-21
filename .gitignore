@@ -1,0 +1,28 @@
+# Ignorer les dossiers de compilation .NET
+bin/
+obj/
+# Fichiers et dossiers temporaires .NET
+*.user
+*.suo
+*.vs/
+*.vscode/
+*.dbmdl
+*.log
+*.pdb
+*.cache
+*AssemblyInfo.cs
+*.TestResults/
+*.coverage
+TestResults/
+*.ncrunch*
+*.DS_Store
+*.swp
+*.tmp
+*.bak
+*.lock.json
+project.lock.json
+artifacts/
+_ReSharper*/
+.idea/
+.vs/
+*.sln.docstates
