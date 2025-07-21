@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LCENjVxLPFg=",
+  "dgSpecHash": "naSeOya1UxQ=",
   "success": true,
-  "projectFilePath": "/home/yepo/apps/RequestProfiler/src/RequestProfiler.UI/RequestProfiler.UI.csproj",
+  "projectFilePath": "/workspaces/Request-Profiler/src/RequestProfiler.UI/RequestProfiler.UI.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

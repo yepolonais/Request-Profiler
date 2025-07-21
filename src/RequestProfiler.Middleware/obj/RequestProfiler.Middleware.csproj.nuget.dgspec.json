@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/yepo/apps/RequestProfiler/src/RequestProfiler.Middleware/RequestProfiler.Middleware.csproj": {}
+    "/workspaces/Request-Profiler/src/RequestProfiler.Middleware/RequestProfiler.Middleware.csproj": {}
   },
   "projects": {
-    "/home/yepo/apps/RequestProfiler/src/RequestProfiler.Middleware/RequestProfiler.Middleware.csproj": {
+    "/workspaces/Request-Profiler/src/RequestProfiler.Middleware/RequestProfiler.Middleware.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/yepo/apps/RequestProfiler/src/RequestProfiler.Middleware/RequestProfiler.Middleware.csproj",
+        "projectUniqueName": "/workspaces/Request-Profiler/src/RequestProfiler.Middleware/RequestProfiler.Middleware.csproj",
         "projectName": "RequestProfiler.Middleware",
-        "projectPath": "/home/yepo/apps/RequestProfiler/src/RequestProfiler.Middleware/RequestProfiler.Middleware.csproj",
-        "packagesPath": "/home/yepo/.nuget/packages/",
-        "outputPath": "/home/yepo/apps/RequestProfiler/src/RequestProfiler.Middleware/obj/",
+        "projectPath": "/workspaces/Request-Profiler/src/RequestProfiler.Middleware/RequestProfiler.Middleware.csproj",
+        "packagesPath": "/home/codespace/.nuget/packages/",
+        "outputPath": "/workspaces/Request-Profiler/src/RequestProfiler.Middleware/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/yepo/.nuget/NuGet/NuGet.Config"
+          "/home/codespace/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -26,8 +26,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/yepo/apps/RequestProfiler/src/RequestProfiler.Storage/RequestProfiler.Storage.csproj": {
-                "projectPath": "/home/yepo/apps/RequestProfiler/src/RequestProfiler.Storage/RequestProfiler.Storage.csproj"
+              "/workspaces/Request-Profiler/src/RequestProfiler.Storage/RequestProfiler.Storage.csproj": {
+                "projectPath": "/workspaces/Request-Profiler/src/RequestProfiler.Storage/RequestProfiler.Storage.csproj"
               }
             }
           }
@@ -72,21 +72,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.408/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.412/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/yepo/apps/RequestProfiler/src/RequestProfiler.Storage/RequestProfiler.Storage.csproj": {
+    "/workspaces/Request-Profiler/src/RequestProfiler.Storage/RequestProfiler.Storage.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/yepo/apps/RequestProfiler/src/RequestProfiler.Storage/RequestProfiler.Storage.csproj",
+        "projectUniqueName": "/workspaces/Request-Profiler/src/RequestProfiler.Storage/RequestProfiler.Storage.csproj",
         "projectName": "RequestProfiler.Storage",
-        "projectPath": "/home/yepo/apps/RequestProfiler/src/RequestProfiler.Storage/RequestProfiler.Storage.csproj",
-        "packagesPath": "/home/yepo/.nuget/packages/",
-        "outputPath": "/home/yepo/apps/RequestProfiler/src/RequestProfiler.Storage/obj/",
+        "projectPath": "/workspaces/Request-Profiler/src/RequestProfiler.Storage/RequestProfiler.Storage.csproj",
+        "packagesPath": "/home/codespace/.nuget/packages/",
+        "outputPath": "/workspaces/Request-Profiler/src/RequestProfiler.Storage/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/yepo/.nuget/NuGet/NuGet.Config"
+          "/home/codespace/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -130,7 +130,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.408/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.412/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
